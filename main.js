@@ -2,6 +2,11 @@ var board = [[5, 4, 3, 2, 1],
   [],
   []];
 
+  console.log('Starting board: ')
+  board.map (function (num) {
+    console.log('--- ' + num.join(' '));
+  });
+
 let moveDisc = function (from , to) {
 
   let fromPeg = board[0, from - 1];
