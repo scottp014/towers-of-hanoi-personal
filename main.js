@@ -4,19 +4,18 @@ var board = [[5, 4, 3, 2, 1],
 
 const winningArr = [5, 4, 3, 2, 1];
 
+
 console.log('Starting board: ')
 board.map (function (num) {
   console.log('--- ' + num.join(' '));
 });
 
-// this is checking to see if the window is ready
-window.addEventListener("DOMContentLoaded", () => {
-  const button = document.getElementById('button'); // finding button from html
-  if (button) { 
-     button.addEventListener('click', moveDisc, false);
-  }
-});
 
+window.addEventListener("click", function () {
+    button.addEventListener("click", moveDisc);  
+  });
+
+  
  
 const checkWinner = function () {
     let check1 = JSON.stringify(board[0, 1]) === JSON.stringify(winningArr);
@@ -28,13 +27,17 @@ const checkWinner = function () {
       [],
       []];
       
+      console.log('Starting board: ')
+      board.map (function (num) {
+        console.log('--- ' + num.join(' '));
+      });
     }
   };
 
 
-const moveDisc = function () {
+const moveDisc = function (from, to) {
 
-  from = document.getElementById("from").value; //adding event listener for click
+  from = document.getElementById("from").value; 
   to = document.getElementById("to").value;
   
   let fromPeg = board[0, from - 1];
@@ -56,55 +59,16 @@ const moveDisc = function () {
     board.map (function (num) {
     console.log('--- ' + num.join(' '));
   })
+  
   };
 
   document.getElementById('from').value = '';
   document.getElementById("to").value = '';
+ 
 
   checkWinner();
   };
 
- 
- 
-
-
-
-
-// moveDisc(1, 3)
-// moveDisc(1, 2)
-// moveDisc(3, 2)
-// moveDisc(1, 3)
-// moveDisc(2, 1)
-// moveDisc(2, 3)
-// moveDisc(1, 3)
-// moveDisc(1, 2)
-// moveDisc(3, 2)
-// moveDisc(3, 1)
-// moveDisc(2, 1)
-// moveDisc(3, 2)
-// moveDisc(1, 3)
-// moveDisc(1, 2)
-// moveDisc(3, 2)
-// moveDisc(1, 3)
-// moveDisc(2, 3)
-// moveDisc(2, 1)
-// moveDisc(3, 1)
-// moveDisc(2, 3)
-// moveDisc(1, 3)
-// moveDisc(1, 2)
-// moveDisc(3, 2)
-// moveDisc(3, 1)
-// moveDisc(2, 3)
-// moveDisc(2, 1)
-// moveDisc(3, 1)
-// moveDisc(2, 3)
-// moveDisc(1, 3)
-// moveDisc(1, 2)
-// moveDisc(3, 2)
-// moveDisc(1, 3)
-// moveDisc(2, 1)
-// moveDisc(2, 3)
-// moveDisc(1, 3)
 
 
 
